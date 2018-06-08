@@ -852,7 +852,7 @@ html {
     box-sizing: border-box;
 }
 body {
-    /*background: #000 url("https://gw.alicdn.com/tfs/TB1HeNFQFXXXXaNXpXXXXXXXXXX-1920-1080.png") no-repeat;*/
+    background: #000 url("https://gw.alicdn.com/tfs/TB1HeNFQFXXXXaNXpXXXXXXXXXX-1920-1080.png") no-repeat;
     background-attachment: fixed;
     background-position: top center;
     background-size: cover;
@@ -1246,7 +1246,7 @@ a:active {
     left: 385px;
     height: 766px;
     width: 421px;
-    /*background: url("https://img.alicdn.com/tfs/TB1nlugQFXXXXbuXpXXXXXXXXXX-910-1642.png") no-repeat top center;*/
+    background: url("https://img.alicdn.com/tfs/TB1nlugQFXXXXbuXpXXXXXXXXXX-910-1642.png") no-repeat top center;
     -webkit-background-size: 100% 100%;
 }
 .wf-formcanvas-inner {
@@ -1273,7 +1273,7 @@ a:active {
     padding-bottom: 30px;
 }
 .wf-formcanvas-body.empty {
-    /*background: url("//gw.alicdn.com/tfs/TB1QAn2eNrI8KJjy0FpXXb5hVXa-249-120.png") no-repeat center;*/
+    background: url("//gw.alicdn.com/tfs/TB1QAn2eNrI8KJjy0FpXXb5hVXa-249-120.png") no-repeat center;
     position: relative;
     min-height: 300px;
 }
@@ -2083,8 +2083,8 @@ html:not(.wf-cursor-move) .wf-component.active > .wf-overlay {
 }
 @font-face {
     font-family: 'iconfont'; /* project id 282342 */
-    /*src: url("//at.alicdn.com/t/font_rmypakjwnxywrk9.eot");*/
-    /*src: url("//at.alicdn.com/t/font_rmypakjwnxywrk9.eot?#iefix") format('embedded-opentype'), url("//at.alicdn.com/t/font_rmypakjwnxywrk9.woff") format('woff'), url("//at.alicdn.com/t/font_rmypakjwnxywrk9.ttf") format('truetype'), url("//at.alicdn.com/t/font_rmypakjwnxywrk9.svg#iconfont") format('svg');*/
+    src: url("//at.alicdn.com/t/font_rmypakjwnxywrk9.eot");
+    src: url("//at.alicdn.com/t/font_rmypakjwnxywrk9.eot?#iefix") format('embedded-opentype'), url("//at.alicdn.com/t/font_rmypakjwnxywrk9.woff") format('woff'), url("//at.alicdn.com/t/font_rmypakjwnxywrk9.ttf") format('truetype'), url("//at.alicdn.com/t/font_rmypakjwnxywrk9.svg#iconfont") format('svg');
 }
 .iconfont {
     font-family: "iconfont" !important;

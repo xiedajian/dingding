@@ -15,12 +15,12 @@ module.exports = {
     // 入口文件的配置项，可以指定多个入口起点
     entry: {
 
-        'index': './src/method1/index.js',
+        'index': './src/method1/test.js',
 
     },
 
     output: {
-        path: '/dist',
+        path: path.resolve(__dirname,'./dist'),
         filename: '[name].js'
     },
 
@@ -80,7 +80,7 @@ module.exports = {
             filename: 'index.html', // 写入 HTML 文件的文件名，默认 `index.html`, 生成的html存放路径，相对于path
             // favicon: './src/img/favicon.ico', // favicon路径，通过webpack引入同时可以生成hash值
             template: './src/method1/test.html', // html模板路径
-            inject: true, // js插入的位置，true/'head'/'body'/false
+            inject: 'body', // js插入的位置，true/'head'/'body'/false
             hash: true, // 为静态资源生成hash值
             chunks: ['index'], // 需要引入的chunk，不配置就会引入所有页面的资源js
             minify: { // 压缩HTML文件
