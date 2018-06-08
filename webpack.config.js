@@ -76,14 +76,14 @@ module.exports = {
         // new ExtractTextPlugin('css/index.css'),
 
         new HtmlWebpackPlugin({
-            title: 'title',  // 生成 HTML 文档的标题
-            filename: 'index.html', // 写入 HTML 文件的文件名，默认 `index.html`, 生成的html存放路径，相对于path
-            // favicon: './src/img/favicon.ico', // favicon路径，通过webpack引入同时可以生成hash值
-            template: './src/method1/test.html', // html模板路径
-            inject: 'body', // js插入的位置，true/'head'/'body'/false
-            hash: true, // 为静态资源生成hash值
-            chunks: ['index'], // 需要引入的chunk，不配置就会引入所有页面的资源js
-            minify: { // 压缩HTML文件
+            title: 'title',
+            filename: 'index.html',
+
+            template: './src/method1/test.html',
+            inject: 'body',
+            hash: true,
+            chunks: ['index'],
+            minify: {
                 removeComments: false, // 移除HTML中的注释
                 collapseWhitespace: false // 删除空白符与换行符
             }
