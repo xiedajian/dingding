@@ -15,7 +15,7 @@ module.exports = {
     // 入口文件的配置项，可以指定多个入口起点
     entry: {
 
-        'index': './src/method1/index.js',
+        'test': './src/method1/test.js',
 
     },
 
@@ -79,10 +79,10 @@ module.exports = {
             title: 'title',
             filename: 'index.html',
 
-            template: './src/method1/index.html',
+            template: './src/method1/test.html',
             inject: 'body',
             hash: true,
-            chunks: ['index'],
+            chunks: ['test'],
             minify: {
                 removeComments: false, // 移除HTML中的注释
                 collapseWhitespace: false // 删除空白符与换行符

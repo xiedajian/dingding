@@ -9,6 +9,7 @@
     "build": "webpack --mode production",
     "build:env": "webpack --config ./webpack.env.config.js",
     "server": "webpack-dev-server --mode development  --open --hot --inline",
+    "server:test": "webpack-dev-server --mode development  --open --hot --inline --config ./webpack.test.config.js",
     "watch": "webpack --mode development --watch"
   },
   "author": "",

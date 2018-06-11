@@ -1,0 +1,45 @@
+body .wf-widgetsitem{
+    display: block;
+}
+body .wf-component{
+    display: none;
+}
+body .wf-widgetsettings{
+    display: none;
+}
+/* 左侧 */
+.wf-widgetspanel .wf-widgetsitem{
+    display: block;
+}
+.wf-widgetspanel .wf-component{
+    display: none;
+}
+.wf-widgetspanel .wf-widgetsettings{
+    display: none;
+}
+
+/* 中间 */
+.wf-formcanvas .wf-widgetsitem{
+    display: none;
+}
+.wf-formcanvas .wf-component{
+    display: block;
+}
+.wf-formcanvas .wf-widgetsettings{
+    display: none;
+}
+
+
+.wf-settingpanel .wf-widgetsitem{
+    display: none;
+}
+.wf-settingpanel .wf-component{
+    display: none;
+}
+.wf-settingpanel .wf-widgetsettings{
+    display: block;
+}
+
+/*.ui-draggable{*/
+    /*background: #333333;*/
+/*}*/

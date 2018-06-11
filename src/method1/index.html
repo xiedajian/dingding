@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>审批-表单设计器</title>
+    <link rel="shortcut icon" type="image/x-icon" href="//g.alicdn.com/dingding/web/0.2.6/img/oldIcon.ico">
+    <!--<link rel="stylesheet" href="./design.css">-->
+    <!--<link rel="stylesheet" href="./css.css">-->
+    <!--<link rel="stylesheet" href="./index.css">-->
+    <!--<link rel="stylesheet" href="./xiedajian.css">-->
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+</head>
+<body>
+<div id="body" class="">
+    <div data-reactroot="" class="wf-wrapper">
+
+        <!--  头部 -->
+        <div class="wf-header">
+            <div class="head-title">
+                <a href="formManager" target="_self">
+                    <!--<img class="navbar-logo" src="//gw.alicdn.com/tfs/TB1P7n2eNrI8KJjy0FpXXb5hVXa-62-62.png"  alt="返回审批管理">-->
+                    <span>审批管理后台</span>
+                </a>
+                <span class="navbar-head">设计器</span>
+            </div>
+            <div class="head-actions disabled">
+                <button class="wf-new-button wf-button-green" id="xdj-yulan">预览</button>
+                <button class="wf-new-button wf-button-green" id="xdj-saveBtn">保存</button>
+                <button class="wf-new-button wf-button-blue" id="xdj-use">保存并启用</button>
+                <!--<div class="select-main">-->
+                <!--<div class="select default-select undefined">&lt;!&ndash; react-text: 14 &ndash;&gt;简体中文&lt;!&ndash; /react-text &ndash;&gt;-->
+                <!--&lt;!&ndash; react-text: 15 &ndash;&gt; &lt;!&ndash; /react-text &ndash;&gt;<i class="iconfont icon-new-down"></i></div>-->
+                <!--<div class="select-options"></div>-->
+                <!--</div>-->
+            </div>
+        </div>
+
+        <!-- 内容 -->
+        <div class="wf-main">
+            <!-- 左侧内容-->
+            <div class="wf-panel wf-widgetspanel">
+                <div class="ant-tabs ant-tabs-top ant-tabs-line">
+                    <!-- 左侧tab切换 -->
+                    <div role="tablist" class="ant-tabs-bar" tabindex="0">
+                        <div class="ant-tabs-nav-container"><span unselectable="unselectable"
+                                                                  class="ant-tabs-tab-prev ant-tabs-tab-btn-disabled"><span
+                                class="ant-tabs-tab-prev-icon"></span></span><span unselectable="unselectable"
+                                                                                   class="ant-tabs-tab-next ant-tabs-tab-btn-disabled"><span
+                                class="ant-tabs-tab-next-icon"></span></span>
+                            <div class="ant-tabs-nav-wrap">
+                                <div class="ant-tabs-nav-scroll">
+                                    <div class="ant-tabs-nav ant-tabs-nav-animated">
+                                        <div class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+                                             style="transform: translate3d(0px, 0px, 0px); width: 312px; display: block;"></div>
+                                        <div role="tab" aria-disabled="false" aria-selected="true"
+                                             class="ant-tabs-tab-active ant-tabs-tab">控件库
+                                        </div>
+                                        <!--<div role="tab" aria-disabled="false" aria-selected="false"-->
+                                        <!--class=" ant-tabs-tab"><span>&lt;!&ndash; react-text: 34 &ndash;&gt;出勤套件&lt;!&ndash; /react-text &ndash;&gt;<i-->
+                                        <!--class="new-tip-dot"></i><span class="tab-tips"></span></span></div>-->
+                                        <!--<div role="tab" aria-disabled="false" aria-selected="false"-->
+                                        <!--class=" ant-tabs-tab"><span>&lt;!&ndash; react-text: 39 &ndash;&gt;人事套件&lt;!&ndash; /react-text &ndash;&gt;<span-->
+                                        <!--class="tab-tips"></span></span></div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 左侧tab页content -->
+                    <div class="ant-tabs-content ant-tabs-content-animated" style="margin-left: 0%;">
+                        <div role="tabpanel" aria-hidden="false" class="ant-tabs-tabpane ant-tabs-tabpane-active">
+
+                            <!-- 单行输入框 -->
+                            <div class="item">
+                                <div class="wf-widgetsitem"><label>单行输入框</label><i
+                                        class="widgeticon iconfont textfield"></i></div>
+
+
+                                <div class="wf-component wf-component-textfield ">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">单行输入框</label><span
+                                                class="wf-componentview-placeholder">请输入</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1460 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="单行输入框"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-placeholder">
+                                        <div class="fieldname"><!-- react-text: 1466 -->提示文字<!-- /react-text --><span
+                                                class="fieldinfo ">最多50字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="请输入">
+                                            <div class="fieldtips">内容最多可填写1000个字</div>
+                                        </div>
+                                    </div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 多行输入框 -->
+                            <div class="item">
+                                <div class="wf-widgetsitem"><label>多行输入框</label><i
+                                        class="widgeticon iconfont textareafield"></i></div>
+
+                                <div class="wf-component wf-component-textareafield">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">多行输入框</label><span
+                                                class="wf-componentview-placeholder">请输入</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1532 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="多行输入框"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-placeholder">
+                                        <div class="fieldname"><!-- react-text: 1538 -->提示文字<!-- /react-text --><span
+                                                class="fieldinfo ">最多50字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="请输入">
+                                            <div class="fieldtips">内容最多可填写8000个字</div>
+                                        </div>
+                                    </div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 数字输入框 -->
+                            <div class="item">
+                                <div class="wf-widgetsitem"><label>数字输入框</label><i
+                                        class="widgeticon iconfont numberfield"></i></div>
+
+                                <div class="wf-component wf-component-numberfield ">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">
+                                            <!-- react-text: 230 -->数字输入框<!-- /react-text --><!-- react-text: 231 -->
+                                            <!-- /react-text --></label><span
+                                                class="wf-componentview-placeholder">请输入</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1556 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="数字输入框"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-placeholder">
+                                        <div class="fieldname"><!-- react-text: 1562 -->提示文字<!-- /react-text --><span
+                                                class="fieldinfo ">最多50字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="请输入"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-placeholder">
+                                        <div class="fieldname"><!-- react-text: 1568 -->单位<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class=""></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!--单选框-->
+                            <div class="item">
+                                <div class="wf-widgetsitem"><label>单选框</label><i
+                                        class="widgeticon iconfont ddselectfield"></i></div>
+
+                                <div class="wf-component wf-component-ddselectfield ">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">单选框</label><span
+                                                class="wf-componentview-placeholder">请选择</span><i
+                                                class="icon icon-enter"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1585 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="单选框"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-placeholder">
+                                        <div class="fieldname"><!-- react-text: 1591 -->提示文字<!-- /react-text --><span
+                                                class="fieldinfo ">最多50字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="请选择"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-options">
+                                        <div class="fieldname"><!-- react-text: 1597 -->选项<!-- /react-text --><span
+                                                class="fieldinfo">最多200项，每项最多50个字</span></div>
+                                        <div class="">
+                                            <div class="fieldblock wf-setting-option"><input type="text" class=""
+                                                                                             maxlength="50" value="选项1"><a
+                                                    class="action action-del"><i class="icon icon-minus"></i></a><a
+                                                    class="action action-add"><i class="icon icon-plus"></i></a></div>
+                                            <div class="fieldblock wf-setting-option"><input type="text" class=""
+                                                                                             maxlength="50" value="选项2"><a
+                                                    class="action action-del"><i class="icon icon-minus"></i></a><a
+                                                    class="action action-add"><i class="icon icon-plus"></i></a></div>
+                                            <div class="fieldblock wf-setting-option"><input type="text" class=""
+                                                                                             maxlength="50" value="选项3"><a
+                                                    class="action action-del"><i class="icon icon-minus"></i></a><a
+                                                    class="action action-add"><i class="icon icon-plus"></i></a></div>
+                                        </div>
+                                        <div class="wf-setting-line"><a>批量编辑</a></div><!-- react-empty: 1620 --></div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 多选框 -->
+                            <div class="item">
+                                <div class="wf-widgetsitem"><label>多选框</label><i
+                                        class="widgeticon iconfont ddmultiselectfield"></i></div>
+
+                                <div class="wf-component wf-component-ddmultiselectfield">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">多选框</label><span
+                                                class="wf-componentview-placeholder">请选择</span><i
+                                                class="icon icon-enter"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1634 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="多选框"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-options">
+                                        <div class="fieldname"><!-- react-text: 1640 -->选项<!-- /react-text --><span
+                                                class="fieldinfo">最多200项，每项最多50个字</span></div>
+                                        <div class="">
+                                            <div class="fieldblock wf-setting-option"><input type="text" class=""
+                                                                                             maxlength="50" value="选项1"><a
+                                                    class="action action-del"><i class="icon icon-minus"></i></a><a
+                                                    class="action action-add"><i class="icon icon-plus"></i></a></div>
+                                            <div class="fieldblock wf-setting-option"><input type="text" class=""
+                                                                                             maxlength="50" value="选项2"><a
+                                                    class="action action-del"><i class="icon icon-minus"></i></a><a
+                                                    class="action action-add"><i class="icon icon-plus"></i></a></div>
+                                            <div class="fieldblock wf-setting-option"><input type="text" class=""
+                                                                                             maxlength="50" value="选项3"><a
+                                                    class="action action-del"><i class="icon icon-minus"></i></a><a
+                                                    class="action action-add"><i class="icon icon-plus"></i></a></div>
+                                        </div>
+                                        <div class="wf-setting-line"><a>批量编辑</a></div><!-- react-empty: 1663 --></div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+                            </div>
+
+                            <!-- 日期 -->
+                            <div class="item">
+                                <div class="wf-widgetsitem"><label>日期</label><i
+                                        class="widgeticon iconfont dddatefield"></i>
+                                </div>
+
+                                <div class="wf-component wf-component-dddatefield">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">日期</label><span
+                                                class="wf-componentview-placeholder">请选择</span><i
+                                                class="icon icon-enter"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1677 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="日期"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-dateformat">
+                                        <div class="fieldname">日期类型</div>
+                                        <label class="fieldblock"><input type="radio" name="dateformat"
+                                                                         value="yyyy-MM-dd HH:mm"><span
+                                                class="verticalmiddle">年-月-日 时:分</span></label><label
+                                            class="fieldblock"><input type="radio" name="dateformat" value="yyyy-MM-dd"><span
+                                            class="verticalmiddle">年-月-日</span></label></div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 日期区间 -->
+                            <div class="item">
+                                <div class="wf-widgetsitem"><label>日期区间</label><i
+                                        class="widgeticon iconfont dddaterangefield"></i></div>
+
+                                <div class="wf-component wf-component-dddaterangefield">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">开始时间</label><span
+                                                class="wf-componentview-placeholder">请选择</span><i
+                                                class="icon icon-enter"></i>
+                                        </div>
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">结束时间</label><span
+                                                class="wf-componentview-placeholder">请选择</span><i
+                                                class="icon icon-enter"></i>
+                                        </div><!-- react-text: 467 --><!-- /react-text --></div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-daterangelabel">
+                                        <div class="fieldname"><!-- react-text: 1702 -->标题1<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="开始时间"></div>
+                                        <div class="fieldname"><!-- react-text: 1707 -->标题2<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="结束时间"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-dateformat">
+                                        <div class="fieldname">日期类型</div>
+                                        <label class="fieldblock"><input type="radio" name="dateformat"
+                                                                         value="yyyy-MM-dd HH:mm"><span
+                                                class="verticalmiddle">年-月-日 时:分</span></label><label
+                                            class="fieldblock"><input type="radio" name="dateformat" value="yyyy-MM-dd"><span
+                                            class="verticalmiddle">年-月-日</span></label></div>
+                                    <div class="wf-field wf-setting-placeholder">
+                                        <div class="fieldname"><!-- react-text: 1721 -->提示文字<!-- /react-text --><span
+                                                class="fieldinfo ">最多50字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="请选择"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field-group">
+                                        <div class="wf-field">
+                                            <div class="fieldname">自动计算时长</div>
+                                        </div>
+                                        <div class="wf-field wf-setting-duration"><label class="fieldblock"><input
+                                                type="checkbox" value="1"><span class="verticalmiddle">开启</span><span
+                                                class="fieldinfo verticalmiddle"></span></label></div>
+                                        <!-- react-text: 1738 --><!-- /react-text --></div><!-- react-empty: 1739 -->
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 图片 -->
+                            <div class="item">
+                                <div class="wf-widgetsitem"><label>图片</label><i
+                                        class="widgeticon iconfont ddphotofield"></i></div>
+                                <div class="wf-component wf-component-ddphotofield">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">图片</label><span
+                                                class="wf-componentview-placeholder"></span><i
+                                                class="icon icon-camera"></i></div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1748 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="图片">
+                                            <div class="fieldtips">图片最多可添加9张</div>
+                                        </div>
+                                    </div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">水印照片</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">开启后图片上传只能通过手机拍照方式</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 说明文字 -->
+                            <div class="item">
+
+                                <div class="wf-widgetsitem"><label>说明文字</label><i
+                                        class="widgeticon iconfont textnote"></i>
+                                </div>
+                                <div class="wf-component wf-component-textnote">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-content">
+                                            <div class="textnote-content"><p>请输入说明文字</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-content">
+                                        <div class="fieldname"><!-- react-text: 1822 -->说明文字<!-- /react-text --><span
+                                                class="fieldinfo ">最多5000字</span></div>
+                                        <div class="fieldblock"><textarea type="text">请输入说明文字</textarea></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-display">
+                                        <div class="fieldname"><!-- react-text: 1828 -->可以输入链接跳转地址
+                                            <!-- /react-text --></div>
+                                        <div class="fieldblock"><textarea class="" type="text"></textarea></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-display">
+                                        <div class="fieldname">显示</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddleverticalmiddle">不在审批页显示</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 金额 -->
+                            <div class="item">
+                                <div class="wf-widgetsitem"><label>金额</label><i
+                                        class="widgeticon iconfont moneyfield"></i>
+                                </div>
+                                <div class="wf-component wf-component-moneyfield">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">金额（元）</label><span
+                                                class="wf-componentview-placeholder">请输入</span></div>
+                                        <div class="cnformat">大写：壹万元整（示例）</div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1844 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="金额（元）"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-placeholder">
+                                        <div class="fieldname"><!-- react-text: 1850 -->提示文字<!-- /react-text --><span
+                                                class="fieldinfo ">最多50字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="请输入"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-cnformat">
+                                        <div class="fieldname">大写</div>
+                                        <label class="fieldblock"><input type="checkbox" value="on"><span
+                                                class="verticalmiddle">显示大写</span><span
+                                                class="fieldinfo verticalmiddle">（输入数字后自动显示大写）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 附件 -->
+                            <div class="item">
+
+                                <div class="wf-widgetsitem"><label>附件</label><i
+                                        class="widgeticon iconfont ddattachment"></i></div>
+                                <div class="wf-component wf-component-ddattachment">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">附件</label><span
+                                                class="wf-componentview-placeholder"></span><i
+                                                class="icon icon-chakanfujian"></i></div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1873 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="附件"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+                            <!--<div class="item">-->
+
+                            <!--<div class="wf-widgetsitem"><label>外部联系人</label><i-->
+                            <!--class="widgeticon iconfont externalcontactfield"></i></div>-->
+                            <!--</div>-->
+
+                            <!-- 联系人 -->
+                            <div class="item">
+                                <div class="wf-widgetsitem"><label>联系人</label><i
+                                        class="widgeticon iconfont innercontactfield"></i></div>
+                                <div class="wf-component wf-component-innercontactfield">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">联系人</label><span
+                                                class="wf-componentview-placeholder">请选择</span><i
+                                                class="icon icon-enter"></i></div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1890 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="联系人"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-choice">
+                                        <div class="fieldname">选项</div>
+                                        <div class="fieldblock"><input type="radio" value="0" name="choice">
+                                            <!-- react-text: 1903 -->只能选择一人<!-- /react-text --><input type="radio"
+                                                                                                      value="1"
+                                                                                                      name="choice"
+                                                                                                      style="margin-left: 10px;">
+                                            <!-- react-text: 1905 -->可同时选择多人<!-- /react-text --></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 部门 -->
+                            <div class="item">
+
+                                <div class="wf-widgetsitem"><label>部门</label><i
+                                        class="widgeticon iconfont departmentfield"></i></div>
+                                <div class="wf-component wf-component-departmentfield">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">部门</label><span
+                                                class="wf-componentview-placeholder">请选择</span><i
+                                                class="icon icon-enter"></i></div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname"><!-- react-text: 1914 -->标题<!-- /react-text --><span
+                                                class="fieldinfo ">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="部门"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-choice">
+                                        <div class="fieldname">选项</div>
+                                        <div class="fieldblock"><input type="radio" value="false" name="multiple">
+                                            <!-- react-text: 1927 -->只能选择一个部门<!-- /react-text --><input type="radio"
+                                                                                                        value="true"
+                                                                                                        name="multiple"
+                                                                                                        style="margin-left: 10px;">
+                                            <!-- react-text: 1929 -->可同时选择多个部门<!-- /react-text --></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 地点 -->
+                            <div class="item">
+
+                                <div class="wf-widgetsitem"><label>地点</label><i
+                                        class="widgeticon iconfont timeandlocationfield"></i></div>
+                                <div class="wf-component wf-component-timeandlocationfield">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label
+                                                class="wf-componentview-label">当前地点</label><span
+                                                class="wf-componentview-placeholder">例如：杭州市北山路钉钉大厦</span></div>
+                                        <div><label class="wf-componentview-label">当前时间</label></div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span
+                                                class="verticalmiddle">参与打印</span><span
+                                                class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            <!-- 电话 -->
+                            <div class="item">
+
+                                <div class="wf-widgetsitem"><label>电话</label><i
+                                        class="widgeticon iconfont calculatefield"></i></div>
+                            </div>
+
+                            <!-- 数据组件 -->
+                            <div class="item">
+
+                                <div class="wf-widgetsitem"><label>数据组件</label><i
+                                        class="widgeticon iconfont tablefield"></i>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!--<div role="tabpanel" aria-hidden="true"-->
+                        <!--class="ant-tabs-tabpane ant-tabs-tabpane-inactive"></div>-->
+                        <!--<div role="tabpanel" aria-hidden="true"-->
+                        <!--class="ant-tabs-tabpane ant-tabs-tabpane-inactive"></div>-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 中间内容 -->
+            <div class="wf-formcanvas">
+                <!--<div class="wf-formcanvas-title">空模板</div>-->
+                <div class="wf-formcanvas-inner">
+                    <!--empty-->
+                    <div class="wf-formcanvas-body dropbody empty">
+                        <div class="empty-bg-text">请从左侧拖动控件来创建属于您的表单</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧内容 -->
+            <div class="wf-panel wf-settingpanel">
+                <div class="ant-tabs ant-tabs-top ant-tabs-line">
+                    <!-- 右侧tab页切换 -->
+                    <div role="tablist" class="ant-tabs-bar" tabindex="0">
+                        <div class="ant-tabs-nav-container ant-tabs-nav-container2">
+                            <span unselectable="unselectable" class="ant-tabs-tab-prev ant-tabs-tab-btn-disabled">
+                                <span   class="ant-tabs-tab-prev-icon"></span>
+                            </span>
+                            <span unselectable="unselectable"  class="ant-tabs-tab-next ant-tabs-tab-btn-disabled">
+                                <span class="ant-tabs-tab-next-icon"> </span>
+                            </span>
+                            <div class="ant-tabs-nav-wrap">
+                                <div class="ant-tabs-nav-scroll">
+                                    <div class="ant-tabs-nav ant-tabs-nav-animated">
+                                        <div class="ant-tabs-ink-bar ant-tabs-ink-bar2 ant-tabs-ink-bar-animated"
+                                             style="transform: translate3d(175px, 0px, 0px); width: 175px; display: block;"></div>
+                                        <div role="tab" aria-disabled="false" aria-selected="false" data-i="1"
+                                             class=" ant-tabs-tab">控件设置
+                                        </div>
+                                        <div role="tab" aria-disabled="false" aria-selected="true" data-i="2"
+                                             class="ant-tabs-tab-active ant-tabs-tab">表单设置
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右侧tab页content -->
+                    <div class="ant-tabs-content ant-tabs-content2 ant-tabs-content-animated" style="margin-left: -100%;">
+                        <!-- ant-tabs-tabpane-inactive -->
+                        <div role="tabpanel" id="wf-widgetsettings"  aria-hidden="false" class="ant-tabs-tabpane ant-tabs-tabpane-active">
+                           <!-- <div class="wf-form wf-widgetsettings">
+                                <div class="wf-field wf-setting-daterangelabel">
+                                    <div class="fieldname">&lt;!&ndash; react-text: 1972 &ndash;&gt;标题1&lt;!&ndash; /react-text &ndash;&gt;<span
+                                            class="fieldinfo ">最多20字</span></div>
+                                    <div class="fieldblock"><input type="text" class="" value="开始时间"></div>
+                                    <div class="fieldname">&lt;!&ndash; react-text: 1977 &ndash;&gt;标题2&lt;!&ndash; /react-text &ndash;&gt;<span
+                                            class="fieldinfo ">最多20字</span></div>
+                                    <div class="fieldblock"><input type="text" class="" value="结束时间"></div>
+                                </div>
+                                <div class="wf-field wf-setting-dateformat">
+                                    <div class="fieldname">日期类型</div>
+                                    <label class="fieldblock"><input type="radio" name="dateformat"
+                                                                     value="yyyy-MM-dd HH:mm"><span
+                                            class="verticalmiddle">年-月-日 时:分</span></label><label
+                                        class="fieldblock"><input type="radio" name="dateformat"
+                                                                  value="yyyy-MM-dd"><span
+                                        class="verticalmiddle">年-月-日</span></label></div>
+                                <div class="wf-field wf-setting-placeholder">
+                                    <div class="fieldname">&lt;!&ndash; react-text: 1991 &ndash;&gt;提示文字&lt;!&ndash; /react-text &ndash;&gt;<span
+                                            class="fieldinfo ">最多50字</span></div>
+                                    <div class="fieldblock"><input type="text" class="" value="请选择"></div>
+                                </div>
+                                <div class="wf-field wf-setting-required">
+                                    <div class="fieldname">验证</div>
+                                    <label class="fieldblock"><input type="checkbox" value="1"><span
+                                            class="verticalmiddle">（必填）</span></label></div>
+                                <div class="wf-field-group">
+                                    <div class="wf-field">
+                                        <div class="fieldname">自动计算时长</div>
+                                    </div>
+                                    <div class="wf-field wf-setting-duration"><label class="fieldblock"><input
+                                            type="checkbox" value="1"><span class="verticalmiddle">开启</span><span
+                                            class="fieldinfo verticalmiddle"></span></label></div>
+                                    &lt;!&ndash; react-text: 2008 &ndash;&gt;&lt;!&ndash; /react-text &ndash;&gt;</div>&lt;!&ndash; react-empty: 2009 &ndash;&gt;
+                                <div class="wf-field wf-setting-print">
+                                    <div class="fieldname">打印</div>
+                                    <label class="fieldblock"><input type="checkbox" value="1"><span
+                                            class="verticalmiddle">参与打印</span><span class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div role="tabpanel" aria-hidden="true" class="ant-tabs-tabpane ant-tabs-tabpane-active">
+                            <div class="wf-form wf-formsettings">
+                                <div class="wf-field wf-setting-title">
+                                    <div class="fieldname"><!-- react-text: 118 -->名称<!-- /react-text -->
+                                        <!--<span class="fieldinfo ">最多50字</span>-->
+                                    </div>
+                                    <div class="fieldblock"><input type="text" class="" value=""></div>
+                                </div>
+                                <div class="wf-field wf-setting-description">
+                                    <div class="fieldname"><!-- react-text: 124 -->描述<!-- /react-text -->
+                                        <!--<span  class="fieldinfo ">最多100字</span>-->
+                                    </div>
+                                    <div class="fieldblock"><textarea type="text" class=""></textarea></div>
+                                </div>
+
+                                <div class="wf-field wf-setting-dir">
+                                    <div class="fieldname dir"><span
+                                            style="display: inline-block; line-height: 34px; height: 34px; vertical-align: top;">分类</span>
+                                        <div class="select-main">
+                                            <div class="select default-select "><!-- react-text: 157 -->请选择
+                                                <!-- /react-text --><!-- react-text: 150 --> <!-- /react-text --><i
+                                                        class="iconfont icon-new-down"></i></div>
+                                            <div class="select-options">
+                                                <div class="select select-option">分类1</div>
+                                                <div class="select select-option">分类2</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<script src="//g.alicdn.com/SWH5/weiform/3.6.2/apps/design.js?t=201806081044" crossorigin="anonymous"></script>-->
+
+<!-- 错误提示 -->
+<div class="wf-storyboard" id="xdj-err" style="display: none;">
+    <div data-reactroot="" class="wf-popup wf-message visible" style="width: 360px;">
+        <i class="icon icon-close wf-popup-close" id="xdj-close-err"></i>
+        <div class="wf-popup-content error">
+            <i class="icon icon-error"></i>
+            <span class="text" id="xdj-err-text">错误</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
