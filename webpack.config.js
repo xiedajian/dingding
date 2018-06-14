@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 // 用于把src的文件复制到dist
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 // 用于把最终的 css 分离成单独文件
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 /* 生成html */
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -15,12 +15,14 @@ module.exports = {
     // 入口文件的配置项，可以指定多个入口起点
     entry: {
 
-        'index': './src/method1/index.js',
+        'index': './src/jq/index.js',
 
     },
 
     output: {
-        path: path.resolve(__dirname,'./dist'),
+        // path：指用来存放打包后文件的输出目录
+        path: path.resolve(__dirname,'dist'),
+        // publicPath：指定资源文件引用的目录
         filename: '[name].js'
     },
 
@@ -43,11 +45,16 @@ module.exports = {
             //添加对样式表.css格式文件的处理
             {
                 test: /\.css$/,
-                use: [
-                    {loader: 'style-loader'},
-                    {loader: 'css-loader'},
-                    {loader: 'postcss-loader'}
-                ]
+                // use: [
+                //     {loader: 'style-loader'},
+                //     {loader: 'css-loader'},
+                //     {loader: 'postcss-loader'}
+                // ]
+                // 使用 'style-loader','css-loader'
+                use:ExtractTextPlugin.extract({
+                    fallback:'style-loader', // 回滚
+                    use:'css-loader'
+                })
             },
             {
                 test: /\.art$/,
@@ -56,6 +63,17 @@ module.exports = {
                     // art-template options (if necessary)
                     // @see https://github.com/aui/art-template
                 }
+            },
+            {
+                test:/\.(png|jpg|gif)$/,
+                use:[{
+                    loader:'url-loader',
+                    options:{ // 这里的options选项参数可以定义多大的图片转换为base64
+                        limit:50000, // 表示小于50kb的图片转为base64,大于50kb的是路径
+                        outputPath:'assets/images', //定义输出的图片文件夹
+                        name:'[name].[ext]',
+                    }
+                }]
             }
         ]
     },
@@ -67,25 +85,23 @@ module.exports = {
         new CleanWebpackPlugin(['./dist']),
 
         /* 复制文件，把src的css、images文件复制到pc下  */
-        // new CopyWebpackPlugin([
-        //   {from:path.resolve(__dirname,'./src/components/vendor'),to:path.resolve(__dirname,'../www/static/pc/vendor')},
-        //   {from:path.resolve(__dirname,'./src/css'),to:path.resolve(__dirname,'../www/static/pc/css')},
-        //   {from:path.resolve(__dirname,'./src/images'),to:path.resolve(__dirname,'../www/static/pc/images')},
-        // ]),
+        new CopyWebpackPlugin([
+          {from:path.resolve(__dirname,'./src/assets'),to:path.resolve(__dirname,'./dist/assets')},
+        ]),
 
-        // new ExtractTextPlugin('css/index.css'),
+        new ExtractTextPlugin('assets/css/common.css'),
 
         new HtmlWebpackPlugin({
             title: 'title',
             filename: 'index.html',
 
-            template: './src/method1/index.html',
+            template: './src/jq/index.html',
             inject: 'body',
             hash: true,
             chunks: ['index'],
             minify: {
-                removeComments: false, // 移除HTML中的注释
-                collapseWhitespace: false // 删除空白符与换行符
+                removeComments: true, // 移除HTML中的注释
+                collapseWhitespace: true // 删除空白符与换行符
             }
         }),
     ],

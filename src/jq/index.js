@@ -1,11 +1,46 @@
-    // require('./design.css');
-    // require('./css.css');
     require('./index.css');
     require('./xiedajian.css');
+    var template = require('../assets/js/template-web');
+    var Temp = require('./template.js');
 
+    // 开启控件监听
+    Temp.startWatch();
+    /**
+     * 动态生成组件模板
+     *  that  {obj}  组件dom对象
+     * */
+    function renderTemp(that) {
+        var data = $(that).find('.wf-component')[0].dataset;
+        // console.log(data);
 
+        var templateStr='';
+        for (var x in data){
+            templateStr += Temp[x];
+        }
+        // console.log(templateStr);
+        var render = template.compile(templateStr);
+        // var html = render({
+        //     title: '这是传过去的数据22',
+        //     tip: '请填写',
+        // });
+        var html = render(data);
 
-    
+        return html;
+    }
+
+    /**
+     * 保存配置清单
+     * */
+    function getConf() {
+        var list = [];
+        $('.wf-formcanvas .item .wf-component').each(function () {
+
+            var componentData = $(this)[0].dataset;
+            list.push(componentData);
+        })
+        console.log(list);
+    }
+
     function selectTab1() {
         $('.ant-tabs-content2').css('marginLeft','0');
         $('.ant-tabs-ink-bar2').css('transform','translate3d(0px, 0px, 0px)');
@@ -32,7 +67,7 @@
         $('.wf-formcanvas .item .wf-component').removeClass('active');
         $(that).find('.wf-component').addClass('active');
 
-        var html=$(that).find('.wf-widgetsettings');
+        var html = renderTemp(that);
 
         // 更改右侧参数设置模块
         $('#wf-widgetsettings').html(html);
@@ -70,22 +105,33 @@
         }
     })
 
+    // 表单分类下拉框
+    $('.select-main .select').on('click',function () {
+        $('#xdj-select').show();
+    });
+
+    $('#xdj-select  .select-option').on('click',function () {
+        var val=$(this).html();
+        $('#xdj-fenlei').html(val);
+        $('#xdj-select').hide();
+    })
+
     // 预览
     $('#xdj-yulan').on('click',function () {
-        // showErr('hello');
-        $('.wf-formcanvas .item').removeClass('active');
+        showErr('暂无法预览');
+        // $('.wf-formcanvas .item').removeClass('active');
         // selectTab1();
     });
     // 保存
     $('#xdj-saveBtn').on('click',function () {
-        // showErr('hello');
-        selectTab1();
+        getConf();
+        showErr('暂无法保存');
     })
 
     //保存并启用
     $('#xdj-use').on('click',function () {
         // showErr('hello');
-        selectTab2();
+        showErr('暂无法启用');
     })
 
     // 错误提示
@@ -117,7 +163,7 @@
             $('.wf-formcanvas-body').hide();
         },
         stop: function (event,ui) {
-            console.log(ui);
+            // console.log(ui);
             // 排序结束选中当前的item
             selectItem(ui.item)
 
@@ -141,5 +187,4 @@
             if($('.wf-formcanvas .item').length < 1) $('.wf-formcanvas-body').show();
         }
     });
-    // $( "ul, li" ).disableSelection();
 

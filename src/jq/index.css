@@ -86,7 +86,7 @@ p {
     content: "\e60d";
 }
 .widgeticon {
-    background: url("//gw.alicdn.com/tps/TB17MD0LFXXXXXFXFXXXXXXXXXX-24-300.png") no-repeat;
+    background: url("../assets/images/TB17MD0LFXXXXXFXFXXXXXXXXXX-24-300.png") no-repeat;
     height: 24px;
     width: 24px;
     display: inline-block;
@@ -129,14 +129,14 @@ p {
     background-position: 0 -264px;
 }
 .widgeticon.timeandlocationfield {
-    background: url("https://img.alicdn.com/tfs/TB18dndRVXXXXb2XpXXXXXXXXXX-24-24.png");
+    background: url("../assets/images/TB18dndRVXXXXb2XpXXXXXXXXXX-24-24.png");
 }
 .widgeticon.departmentfield {
-    background: url("https://gw.alicdn.com/tfs/TB195mdSVXXXXX_XXXXXXXXXXXX-48-48.png");
+    background: url("../assets/images/TB195mdSVXXXXX_XXXXXXXXXXXX-48-48.png");
     background-size: 100% 100%;
 }
 .widgeticon.calculatefield {
-    background: no-repeat center url("https://gw.alicdn.com/tfs/TB1H8JBegoQMeJjy0FnXXb8gFXa-32-32.png");
+    background: no-repeat center url("../assets/images/TB1H8JBegoQMeJjy0FnXXb8gFXa-32-32.png");
     background-size: 16px;
 }
 .wf-new-button {
@@ -428,7 +428,7 @@ a:active {
     left: 385px;
     height: 766px;
     width: 421px;
-    background: url("https://img.alicdn.com/tfs/TB1nlugQFXXXXbuXpXXXXXXXXXX-910-1642.png") no-repeat top center;
+    background: url("../assets/images/TB1nlugQFXXXXbuXpXXXXXXXXXX-910-1642.png") no-repeat top center;
     -webkit-background-size: 100% 100%;
 }
 .wf-formcanvas-inner {
@@ -448,7 +448,7 @@ a:active {
     padding-bottom: 30px;
 }
 .wf-formcanvas-body.empty {
-    background: url("//gw.alicdn.com/tfs/TB1QAn2eNrI8KJjy0FpXXb5hVXa-249-120.png") no-repeat center;
+    background: url("../assets/images/TB1QAn2eNrI8KJjy0FpXXb5hVXa-249-120.png") no-repeat center;
     position: relative;
     min-height: 300px;
 }
@@ -642,7 +642,7 @@ html:not(.wf-cursor-move) .wf-component.active > .wf-overlay {
     color: #fff;
 }
 .wf-settingpanel .wf-form {
-    overflow-y: auto;
+    /*overflow-y: auto;*/
     padding-bottom: 20px;
 }
 .wf-settingpanel .ant-tabs .ant-tabs-bar {
@@ -1233,3 +1233,25 @@ body {
 }
 
 
+.wf-settingpanel .wf-field.wf-setting-options input[type="text"] {
+    width: 150px;
+}
+.wf-settingpanel .wf-field.wf-setting-options .action {
+    margin-left: 5px;
+    display: inline-block;
+    opacity: 0.6;
+    text-align: center;
+}
+.wf-settingpanel .wf-field.wf-setting-options .action .icon {
+    background: #000;
+    border-radius: 50%;
+    color: #fff;
+    padding: 3px 2px 3px 3px;
+    font-size: 12px;
+}
+.select-main .select-option {
+    background: #fff;
+    color: #000;
+    padding: 10px 5px;
+    cursor: pointer;
+}
