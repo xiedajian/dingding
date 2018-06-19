@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: .8rem;
+    line-height: 1.5;
+    color: #333;
+    background: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+body.overflow {
+    overflow: hidden;
+}
+ul,
+li,
+ol,
+dl {
+    list-style: none;
+}
+i,
+s {
+    font-style: normal;
+    font-weight: 400;
+}
+img,
+svg {
+    width: 100%;
+    vertical-align: bottom;
+}
+a {
+    color: #333;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+a,
+button,
+input,
+select,
+textarea {
+    outline: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    line-height: 1.5;
+    color: #333;
+}
+.clearfix:before,
+.clearfix:after {
+    content: '';
+    height: 0;
+    line-height: 0;
+    clear: both;
+    display: table;
+}
+.clearfix {
+    zoom: 1;
+}
+.page .form-wrap {
+    margin-top: 0;
+}
+.page .form-list .form-list-item__multiply .weui-cell,
+.page .form-list .form-list-item__instructions .weui-cell {
+    align-items: flex-start;
+}
+/* 媒体查询 */
+@media only screen and (min-width: 320px) and (max-width: 359px) {
+    html {
+        font-size: 17px!important;
+    }
+}
+@media only screen and (min-width: 360px) and (max-width: 374px) {
+    html {
+        font-size: 19px!important;
+    }
+}
+@media only screen and (min-width: 375px) and (max-width: 383px) {
+    html {
+        font-size: 20px!important;
+    }
+}
+@media only screen and (min-width: 384px) and (max-width: 400px) {
+    html {
+        font-size: 20.5px!important;
+    }
+}
+@media only screen and (min-width: 401px) and (max-width: 479px) {
+    html {
+        font-size: 22px!important;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 599px) {
+    html {
+        font-size: 25px!important;
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    html {
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    html {
+        font-size: 26px;
+    }
+}
+@media only screen and (min-width: 1201px) {
+    html {
+        font-size: 25px;
+    }
+    body {
+        margin: 0 auto;
+    }
+}
+
+.weui-cells{
+    margin-top: 0.8em;
+    background: #ececec;
+}
+.weui-cell{
+    background: #fff;
+}
+.form-list-item__single .weui-cell__bd .weui-input ,.form-list-item__number  .weui-cell__bd .weui-input{
+    text-align: right;
+}
+.weui-cells_form .weui-cell__ft{
+    font-size: 0.8rem ;
+}
+.weui-uploader__input-box{
+    width: 50px;
+    height: 50px;
+}

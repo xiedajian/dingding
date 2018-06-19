@@ -8,7 +8,7 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "build:env": "webpack --config ./webpack.env.config.js",
-    "server": "webpack-dev-server --mode development  --open --hot --inline",
+    "server": "webpack-dev-server --mode development  --open --hot --inline --host 0.0.0.0 ",
     "server:test": "webpack-dev-server --mode development  --open --hot --inline --config ./webpack.test.config.js",
     "watch": "webpack --mode development --watch"
   },
@@ -16,6 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "art-template": "^4.12.2",
+    "express": "^4.16.3",
+    "http-proxy-middleware": "^0.18.0",
+    "request": "^2.87.0",
     "webpack": "^4.11.1"
   },
   "devDependencies": {

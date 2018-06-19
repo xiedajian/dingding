@@ -45,7 +45,7 @@ var datetype=`<div class="wf-field wf-setting-dateformat">
                 </div>`;
 
 // 标题2
-var title2 = '<div class="wf-field wf-setting-label2"><div class="fieldname"><!-- react-text: 597 -->标题2<!-- /react-text --><span class="fieldinfo ">最多20字</span></div><div class="fieldblock"><input type="text" class="" value="{{title}}"></div></div>';
+var secondtitle = '<div class="wf-field wf-setting-label2"><div class="fieldname"><!-- react-text: 597 -->标题2<!-- /react-text --><span class="fieldinfo ">最多20字</span></div><div class="fieldblock"><input type="text" class="" value="{{secondtitle}}"></div></div>';
 
 // 说明文字 textnote
 var textnote = `<div class="wf-field wf-setting-content">
@@ -71,11 +71,11 @@ function startWatch() {
         $('.wf-formcanvas-inner .wf-component.active').find('.wf-componentview-label:first').html(val);
         $('.wf-formcanvas-inner .wf-component.active').attr('data-title',val);
     });
-    // 监听控件设置 标题2title2字段实时反馈到组件
+    // 监听控件设置 标题2secondtitle字段实时反馈到组件
     $('.wf-settingpanel').on('keyup','.wf-setting-label2',function () {
         var val=$(this).find('input').val();
         $('.wf-formcanvas-inner .wf-component.active').find('.wf-componentview-label:last').html(val);
-        $('.wf-formcanvas-inner .wf-component.active').attr('data-title2',val);
+        $('.wf-formcanvas-inner .wf-component.active').attr('data-secondtitle',val);
     });
     // 监听控件设置 提示tip字段实时反馈到组件
     $('.wf-settingpanel').on('keyup','.wf-setting-placeholder',function () {
@@ -165,7 +165,7 @@ module.exports = {
     log,
     items,
     datetype,
-    title2,
+    secondtitle,
     textnote,
     link,
 }

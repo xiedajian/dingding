@@ -1,7 +1,9 @@
     require('./index.css');
     require('./xiedajian.css');
-    var template = require('../assets/js/template-web');
-    var Temp = require('./template.js');
+    var template = require('./template-web');
+    var Temp = require('./index-component.js');
+
+
 
     // 开启控件监听
     Temp.startWatch();
@@ -11,7 +13,7 @@
      * */
     function renderTemp(that) {
         var data = $(that).find('.wf-component')[0].dataset;
-        // console.log(data);
+        console.log(data);
 
         var templateStr='';
         for (var x in data){
@@ -29,18 +31,98 @@
     }
 
     /**
+     * 拓展对象
+     * newconfig = extend({},defaultConfig,myconfig)
+     */
+
+    function extend(target) {
+        var sources = Array.prototype.slice.call(arguments, 1);
+
+        for (var i = 0; i < sources.length; i += 1) {
+            var source = sources[i];
+            for (var key in source) {
+                if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                }
+            }
+        }
+        return target;
+    };
+
+    /**
      * 保存配置清单
      * */
     function getConf() {
-        var list = [];
-        $('.wf-formcanvas .item .wf-component').each(function () {
+        var config = [];
+        $('.wf-formcanvas .item ').each(function () {
+            var columnType = $(this).attr('data-columnType');
+            var componentData = $(this).find('.wf-component')[0].dataset;
+            if(componentData.secondtitle){
+                componentData.secondTitle =  componentData.secondtitle;
+            }
+            // console.log(componentData);
+            // return;
 
-            var componentData = $(this)[0].dataset;
-            list.push(componentData);
+            // componentData.columnType = columnType;
+            var newconfig = extend({},componentData,{columnType:columnType});
+            config.push(newconfig);
         })
-        console.log(list);
+
+        var formName = $('#xdj-formName').val() || '名称';
+        var formType = $('#xdj-fenlei').attr('data-formType');
+        var organ = $('#xdj-formType').val() ||  '描述';
+
+        var data = {
+            formName:formName,
+            formType:formType,
+            organ:organ,
+            config:JSON.stringify(config),
+        }
+        console.log(data);
+        return data;
+
     }
 
+    /**
+     * ajax 保存配置
+     * */
+    function save(callback,fail) {
+        // var data=getConf();
+        // console.log(111);
+        // console.log(data);
+        // return;
+        $.ajax({
+            url:'http://sycs.dashouzhang.org/chengguan/cg/formH5/save.json',
+            data:getConf(),
+            type:'POST',
+            // contentType:'multipart/form-data',
+            success:function (res) {
+                callback(res);
+            },
+            error:function (err) {
+                showErr('出了一点小问题，请稍后再试')
+            }
+        })
+    }
+
+
+    /**
+     * 预览-生成二维码
+     * */
+    function preview(formId) {
+        $("#xdj-qrcode").empty();
+        $("#xdj-qrcode").qrcode({
+            width: 200, //宽度
+            height:200, //高度
+            text: "./preview.html?formId="+formId
+        });
+        $('#xdj-preview').show();
+    }
+    // 关闭预览
+    $('#xdj-preview').hide();
+    $('#xdj-preview-close').on('click',function () {
+        $('#xdj-preview').hide();
+    })
     function selectTab1() {
         $('.ant-tabs-content2').css('marginLeft','0');
         $('.ant-tabs-ink-bar2').css('transform','translate3d(0px, 0px, 0px)');
@@ -112,26 +194,43 @@
 
     $('#xdj-select  .select-option').on('click',function () {
         var val=$(this).html();
+        var formType=$(this).attr('data-formType');
         $('#xdj-fenlei').html(val);
+        $('#xdj-fenlei').attr('data-formType',formType);
         $('#xdj-select').hide();
     })
 
     // 预览
     $('#xdj-yulan').on('click',function () {
-        showErr('暂无法预览');
-        // $('.wf-formcanvas .item').removeClass('active');
-        // selectTab1();
+        // showErr('暂无法预览');
+        save(function (res) {
+            var data=JSON.parse(res);
+            if(data.message == "保存成功"){
+                preview(data.formId);
+            }
+
+        });
     });
     // 保存
     $('#xdj-saveBtn').on('click',function () {
-        getConf();
-        showErr('暂无法保存');
+        save(function (res) {
+            var data=JSON.parse(res);
+            if(data.message == "保存成功"){
+                alert('保存成功');
+            }
+
+        });
     })
 
     //保存并启用
     $('#xdj-use').on('click',function () {
-        // showErr('hello');
-        showErr('暂无法启用');
+        save(function (res) {
+            var data=JSON.parse(res);
+            if(data.message == "保存成功"){
+                alert('启动成功');
+            }
+        });
+
     })
 
     // 错误提示

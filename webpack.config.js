@@ -16,6 +16,7 @@ module.exports = {
     entry: {
 
         'index': './src/jq/index.js',
+        'preview': './src/jq/preview.js',
 
     },
 
@@ -45,16 +46,16 @@ module.exports = {
             //添加对样式表.css格式文件的处理
             {
                 test: /\.css$/,
-                // use: [
-                //     {loader: 'style-loader'},
-                //     {loader: 'css-loader'},
-                //     {loader: 'postcss-loader'}
-                // ]
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'},
+                    {loader: 'postcss-loader'}
+                ]
                 // 使用 'style-loader','css-loader'
-                use:ExtractTextPlugin.extract({
-                    fallback:'style-loader', // 回滚
-                    use:'css-loader'
-                })
+                // use:ExtractTextPlugin.extract({
+                //     fallback:'style-loader', // 回滚
+                //     use:'css-loader'
+                // })
             },
             {
                 test: /\.art$/,
@@ -89,7 +90,7 @@ module.exports = {
           {from:path.resolve(__dirname,'./src/assets'),to:path.resolve(__dirname,'./dist/assets')},
         ]),
 
-        new ExtractTextPlugin('assets/css/common.css'),
+        // new ExtractTextPlugin('assets/css/[name].css'),
 
         new HtmlWebpackPlugin({
             title: 'title',
@@ -104,9 +105,21 @@ module.exports = {
                 collapseWhitespace: true // 删除空白符与换行符
             }
         }),
+        new HtmlWebpackPlugin({
+            title: 'preview',
+            filename: 'preview.html',
+
+            template: './src/jq/preview.html',
+            inject: 'body',
+            hash: true,
+            chunks: ['preview'],
+            minify: {
+                removeComments: true, // 移除HTML中的注释
+                collapseWhitespace: true // 删除空白符与换行符
+            }
+        }),
     ],
 
-    // 配置webpack开发热更新服务功能,它提供了一个简单的web服务器和实时重载的功能（只刷新页面不刷新控制台）
     devServer: {
         contentBase: path.resolve(__dirname, './dist'),
         host: 'localhost',
