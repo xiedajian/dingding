@@ -129,7 +129,7 @@ module.exports = {
 
         // 9 说明文字
         `
-<div class="weui-cells__tips"><a style="display:block;width:100%;font-size: 0.6rem;color: #999;" href="{{link}}">{{textnote}}</a></div>
+<div class="weui-cells__tips"><a style="display:block;margin-top:0.5rem;width:100%;font-size: 0.6rem;color: {{ link ? '#32607b' : ''}};" href="{{link || 'javascript::viod();'}}">{{textnote}}</a></div>
 `,
 
         // 10 金额
