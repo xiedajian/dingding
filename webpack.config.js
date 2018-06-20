@@ -115,7 +115,7 @@ module.exports = {
             chunks: ['preview'],
             minify: {
                 removeComments: true, // 移除HTML中的注释
-                collapseWhitespace: true // 删除空白符与换行符
+                collapseWhitespace: false // 删除空白符与换行符
             }
         }),
     ],

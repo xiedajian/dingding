@@ -22,8 +22,6 @@ https://aflow.dingtalk.com/dingtalk/web/query/formDesign?formUuid=FORM-empty&isC
 // art模板
 https://aui.github.io/art-template/docs/
 
-// 第一种方法：只用目标站的css ，拖拽使用jquery-ui
-src/method1/test.html   test.js
 
 
 

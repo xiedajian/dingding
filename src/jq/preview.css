@@ -65,7 +65,7 @@ h6 {
     zoom: 1;
 }
 .page .form-wrap {
-    margin-top: 0;
+    margin-top: 50px;
 }
 .page .form-list .form-list-item__multiply .weui-cell,
 .page .form-list .form-list-item__instructions .weui-cell {
@@ -143,4 +143,88 @@ h6 {
 }
 .weui-uploader__input-box:after{
     width: 26px
+}
+.header{
+    position: fixed;
+    top: 0;
+    background: #000000;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}
+.text-red{
+    color: rgb(200,57,61);
+}
+.back-icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+
+}
+.arrow_box {
+    width:30px;
+    height:30px;
+    margin:15px 0;
+    position:absolute;
+    top: 0;
+    cursor:pointer;
+}
+/*左箭头*/
+.left {
+    width:20px;
+    height:20px;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:2;
+    /*兼容ie8-*/
+    /*border:1px solid blue;
+*/
+}
+.left-arrow1,.left-arrow2 {
+    width:0;
+    height:0;
+    display:block;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:5;
+    /*兼容ie8-*/
+    border-top:10px transparent dashed;
+    border-left:10px transparent dashed;
+    border-bottom:10px transparent dashed;
+    border-right:10px white solid;
+    overflow:hidden;
+}
+.left-arrow1 {
+    border-right:10px #ffffff solid;
+}
+.left-arrow2 {
+    left:1px;
+    /*重要*/
+    border-right:10px #000000 solid;
+}
+.submit-btn{
+    width: 100%;
+    padding: 15px;
+
+}
+.submit-btn a{
+    display: block;
+    width: 100%;
+    height: 45px;
+    background: rgb(0, 123, 227);
+    border: 1px solid rgb(0, 123, 227);
+    border-radius: 5px;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
 }
