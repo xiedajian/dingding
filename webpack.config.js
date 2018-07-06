@@ -4,11 +4,10 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 // 用于把src的文件复制到dist
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-// 用于把最终的 css 分离成单独文件
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 /* 生成html */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+// 打开浏览器
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
 
@@ -51,11 +50,6 @@ module.exports = {
                     {loader: 'css-loader'},
                     {loader: 'postcss-loader'}
                 ]
-                // 使用 'style-loader','css-loader'
-                // use:ExtractTextPlugin.extract({
-                //     fallback:'style-loader', // 回滚
-                //     use:'css-loader'
-                // })
             },
             {
                 test: /\.art$/,
@@ -90,7 +84,6 @@ module.exports = {
           {from:path.resolve(__dirname,'./src/assets'),to:path.resolve(__dirname,'./dist/assets')},
         ]),
 
-        // new ExtractTextPlugin('assets/css/[name].css'),
 
         new HtmlWebpackPlugin({
             title: 'title',
@@ -118,17 +111,21 @@ module.exports = {
                 collapseWhitespace: false // 删除空白符与换行符
             }
         }),
+
+
+        // 打开浏览器url
+        new OpenBrowserPlugin({ url: 'http://localhost:8000/view/index.html' }),
     ],
 
     devServer: {
         contentBase: path.resolve(__dirname, './dist'),
-        host: 'localhost',
-        disableHostCheck: true, //绕过主机检查
+        // host: 'localhost',
+        disableHostCheck: true, // 绕过主机检查
         hot: true,
-        https: false,  // 是否采用https，默认是http
+        https: false,           // 是否采用https，默认是http
         inline: true,
-        progress: true, // 输出运行进度到控制台。
-        watchContentBase: true, //观察contentBase选项提供的文件。文件更改将触发整页重新加载
+        progress: true,         // 输出运行进度到控制台。
+        watchContentBase: true, // 观察contentBase选项提供的文件。文件更改将触发整页重新加载
         compress: true,
         port: 8000
     }

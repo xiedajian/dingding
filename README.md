@@ -11,7 +11,9 @@ https://aui.github.io/art-template/docs/
 npm run server
 
 
-##
+## 打包
+
+npm run build
 
 
 

@@ -428,7 +428,7 @@ a:active {
     left: 385px;
     height: 766px;
     width: 421px;
-    background: url("../assets/images/TB1nlugQFXXXXbuXpXXXXXXXXXX-910-1642.png") no-repeat top center;
+    background: url("/assets/images/TB1nlugQFXXXXbuXpXXXXXXXXXX-910-1642.png") no-repeat top center;
     -webkit-background-size: 100% 100%;
 }
 .wf-formcanvas-inner {
@@ -448,7 +448,7 @@ a:active {
     padding-bottom: 30px;
 }
 .wf-formcanvas-body.empty {
-    background: url("../assets/images/TB1QAn2eNrI8KJjy0FpXXb5hVXa-249-120.png") no-repeat center;
+    background: url("/assets/images/TB1QAn2eNrI8KJjy0FpXXb5hVXa-249-120.png") no-repeat center;
     position: relative;
     min-height: 300px;
 }
