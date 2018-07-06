@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 // 用于把最终的 css 分离成单独文件
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 /* 生成html */
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
         // path：指用来存放打包后文件的输出目录
         path: path.resolve(__dirname,'dist'),
         // publicPath：指定资源文件引用的目录
-        filename: '[name].js'
+        filename: 'js/[name].js'
     },
 
     externals: {
@@ -70,7 +70,7 @@ module.exports = {
                 use:[{
                     loader:'url-loader',
                     options:{ // 这里的options选项参数可以定义多大的图片转换为base64
-                        limit:50000, // 表示小于50kb的图片转为base64,大于50kb的是路径
+                        limit:5000, // 表示小于50kb的图片转为base64,大于50kb的是路径
                         outputPath:'assets/images', //定义输出的图片文件夹
                         name:'[name].[ext]',
                     }
@@ -94,7 +94,7 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             title: 'title',
-            filename: 'index.html',
+            filename: 'view/index.html',
 
             template: './src/jq/index.html',
             inject: 'body',
@@ -102,12 +102,12 @@ module.exports = {
             chunks: ['index'],
             minify: {
                 removeComments: true, // 移除HTML中的注释
-                collapseWhitespace: true // 删除空白符与换行符
+                collapseWhitespace: false // 删除空白符与换行符
             }
         }),
         new HtmlWebpackPlugin({
             title: 'preview',
-            filename: 'preview.html',
+            filename: 'view/preview.html',
 
             template: './src/jq/preview.html',
             inject: 'body',
