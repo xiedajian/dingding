@@ -2,6 +2,8 @@
 
 # 仿钉钉后台自定义表单
 
+预览地址：https://xiedajian.github.io/dingding/dist/index.html
+
 pc端自定义表单，手机端扫码预览
 
 用到jquery + jquery-ui + artTemplate + webpack 
