@@ -85,7 +85,6 @@
             url:'xx/save.json',
             data:getConf(),
             type:'POST',
-            // contentType:'multipart/form-data',
             success:function (res) {
                 callback(res);
             },

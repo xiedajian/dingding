@@ -12,11 +12,11 @@ var template = require('./template-web');
 
 $(function () {
 
-    var formId =  $('body').attr('data-formId') || 126;
+    var formId =  $('body').attr('data-formId') ;
 
     // 获取线上配置
     // $.ajax({
-    //     url:'http://sycs.dashouzhang.org/chengguan/cg/formH5/look.json',
+    //     url:'xx/getjson/',
     //     data:{formId:formId},
     //     type:'POST',
     //     success:function (res) {
