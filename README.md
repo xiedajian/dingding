@@ -1,12 +1,17 @@
 
 
-## // 钉钉目标站
-https://aflow.dingtalk.com/dingtalk/web/query/formDesign?formUuid=FORM-empty&isCopyPublic=true&processCode=PROC-EMPTY-DEMO&processStatus=INVALID
+# 仿钉钉后台自定义表单
 
-## // art模板
+pc端自定义表单，手机端扫码预览
+
+用到jquery + jquery-ui + artTemplate + webpack 
+
+
+## artTemplate模板
 https://aui.github.io/art-template/docs/
 
-# 运行
+
+## 开发预览运行
 
 npm run server
 
@@ -14,6 +19,7 @@ npm run server
 ## 打包
 
 npm run build
+
 
 
 

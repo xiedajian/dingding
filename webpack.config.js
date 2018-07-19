@@ -13,10 +13,8 @@ module.exports = {
 
     // 入口文件的配置项，可以指定多个入口起点
     entry: {
-
         'index': './src/jq/index.js',
         'preview': './src/jq/preview.js',
-
     },
 
     output: {
@@ -87,7 +85,7 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             title: 'title',
-            filename: 'view/index.html',
+            filename: 'index.html',
 
             template: './src/jq/index.html',
             inject: 'body',
@@ -100,7 +98,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: 'preview',
-            filename: 'view/preview.html',
+            filename: 'preview.html',
 
             template: './src/jq/preview.html',
             inject: 'body',
@@ -114,7 +112,7 @@ module.exports = {
 
 
         // 打开浏览器url
-        new OpenBrowserPlugin({ url: 'http://localhost:8000/view/index.html' }),
+        new OpenBrowserPlugin({ url: 'http://localhost:8000/index.html' }),
     ],
 
     devServer: {
