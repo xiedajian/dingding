@@ -13,7 +13,7 @@
      * */
     function renderTemp(that) {
         var data = $(that).find('.wf-component')[0].dataset;
-        console.log(data);
+        // console.log(data);
 
         var templateStr='';
         for (var x in data){
@@ -21,10 +21,6 @@
         }
         // console.log(templateStr);
         var render = template.compile(templateStr);
-        // var html = render({
-        //     title: '这是传过去的数据22',
-        //     tip: '请填写',
-        // });
         var html = render(data);
 
         return html;
@@ -60,8 +56,6 @@
             if(componentData.secondtitle){
                 componentData.secondTitle =  componentData.secondtitle;
             }
-            // console.log(componentData);
-            // return;
 
             // componentData.columnType = columnType;
             var newconfig = extend({},componentData,{columnType:columnType});
@@ -78,21 +72,17 @@
             organ:organ,
             config:JSON.stringify(config),
         }
-        console.log(data);
+        // console.log(data);
         return data;
-
     }
 
     /**
      * ajax 保存配置
      * */
     function save(callback,fail) {
-        // var data=getConf();
-        // console.log(111);
-        // console.log(data);
-        // return;
+
         $.ajax({
-            url:'http://sycs.dashouzhang.org/chengguan/cg/formH5/save.json',
+            url:'xx/save.json',
             data:getConf(),
             type:'POST',
             // contentType:'multipart/form-data',
@@ -123,6 +113,8 @@
     $('#xdj-preview-close').on('click',function () {
         $('#xdj-preview').hide();
     })
+
+    // 右侧tab页面切换
     function selectTab1() {
         $('.ant-tabs-content2').css('marginLeft','0');
         $('.ant-tabs-ink-bar2').css('transform','translate3d(0px, 0px, 0px)');
@@ -136,7 +128,6 @@
         $('.ant-tabs-nav-container2 div.ant-tabs-tab').removeClass('ant-tabs-tab-active');
         $('.ant-tabs-nav-container2 div.ant-tabs-tab:last-of-type').addClass('ant-tabs-tab-active');
     }
-    // 右侧tab页面切换
     $('.ant-tabs-nav-container2 .ant-tabs-tab').on('click',function () {
         ($(this).attr('data-i') == 1) ? selectTab1() : selectTab2() ;
     })
@@ -202,35 +193,30 @@
 
     // 预览
     $('#xdj-yulan').on('click',function () {
-        // showErr('暂无法预览');
-        save(function (res) {
-            var data=JSON.parse(res);
-            if(data.message == "保存成功"){
-                preview(data.formId);
-            }
+        // 手机扫码预览
+        // save(function (res) {
+        //     var data=JSON.parse(res);
+        //     if(data.message == "保存成功"){
+        //         preview(data.formId);
+        //     }
+        //
+        // });
 
-        });
+        // 本地预览
+        var configStr = JSON.stringify(getConf());
+        window.localStorage.setItem('configStr',configStr);
+        console.log(configStr);
+        window.open('./preview.html')
+
     });
-    // 保存
+    // 保存按钮
     $('#xdj-saveBtn').on('click',function () {
-        save(function (res) {
-            var data=JSON.parse(res);
-            if(data.message == "保存成功"){
-                alert('保存成功');
-            }
-
-        });
+        alert('保存成功');
     })
 
-    //保存并启用
+    //保存并启用 按钮
     $('#xdj-use').on('click',function () {
-        save(function (res) {
-            var data=JSON.parse(res);
-            if(data.message == "保存成功"){
-                alert('启动成功');
-            }
-        });
-
+        alert('启动成功');
     })
 
     // 错误提示

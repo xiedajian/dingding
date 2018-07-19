@@ -14,21 +14,27 @@ $(function () {
 
     var formId =  $('body').attr('data-formId') || 126;
 
-    $.ajax({
-        url:'http://sycs.dashouzhang.org/chengguan/cg/formH5/look.json',
-        data:{formId:formId},
-        type:'POST',
-        success:function (res) {
-            var data = JSON.parse(res);
-            if(data.config && data.config.length > 0){
-                renderHtml(data.config);
-            }
-        },
-        error:function (err) {
+    // 获取线上配置
+    // $.ajax({
+    //     url:'http://sycs.dashouzhang.org/chengguan/cg/formH5/look.json',
+    //     data:{formId:formId},
+    //     type:'POST',
+    //     success:function (res) {
+    //         var data = JSON.parse(res);
+    //         if(data.config && data.config.length > 0){
+    //             renderHtml(data.config);
+    //         }
+    //     },
+    //     error:function (err) {
+    //
+    //     }
+    // })
 
-        }
-    })
-
+    // 获取配置
+    // 开发时本地获取 ,  生产可以获取线上配置
+    var configStr = window.localStorage.getItem('configStr');
+    var data = JSON.parse(configStr);
+    renderHtml(JSON.parse(data.config));
 
     /**
      * 渲染html
@@ -47,6 +53,7 @@ $(function () {
         init();
     }
 
+    // 开启
     function init() {
         /* 日期 */
         $('.select-date').each(function () {

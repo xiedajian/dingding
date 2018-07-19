@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>审批-表单设计器</title>
+    <link rel="shortcut icon" type="image/x-icon" href="//g.alicdn.com/dingding/web/0.2.6/img/oldIcon.ico">
+    
+    
+    <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    
+</head>
+<body>
+<div id="body" class="">
+    <div data-reactroot="" class="wf-wrapper">
+
+        
+        <div class="wf-header">
+            <div class="head-title">
+                <a href="./preview.html" target="_self">
+                    
+                    
+                    <span>表单管理后台</span>
+                </a>
+                <span class="navbar-head">设计器</span>
+            </div>
+            <div class="head-actions disabled">
+                <button class="wf-new-button wf-button-green" id="xdj-yulan">预览</button>
+                <button class="wf-new-button wf-button-green" id="xdj-saveBtn">保存</button>
+                <button class="wf-new-button wf-button-blue" id="xdj-use">保存并启用</button>
+                
+                
+                
+                
+                
+            </div>
+        </div>
+
+        
+        <div class="wf-main">
+            
+            <div class="wf-panel wf-widgetspanel">
+                <div class="ant-tabs ant-tabs-top ant-tabs-line">
+                    
+                    <div role="tablist" class="ant-tabs-bar" tabindex="0">
+                        <div class="ant-tabs-nav-container"><span unselectable="unselectable" class="ant-tabs-tab-prev ant-tabs-tab-btn-disabled"><span class="ant-tabs-tab-prev-icon"></span></span><span unselectable="unselectable" class="ant-tabs-tab-next ant-tabs-tab-btn-disabled"><span class="ant-tabs-tab-next-icon"></span></span>
+                            <div class="ant-tabs-nav-wrap">
+                                <div class="ant-tabs-nav-scroll">
+                                    <div class="ant-tabs-nav ant-tabs-nav-animated">
+                                        <div class="ant-tabs-ink-bar ant-tabs-ink-bar-animated" style="transform: translate3d(0px, 0px, 0px); width: 312px; display: block;"></div>
+                                        <div role="tab" aria-disabled="false" aria-selected="true" class="ant-tabs-tab-active ant-tabs-tab">控件库
+                                        </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ant-tabs-content ant-tabs-content-animated" style="margin-left: 0%;">
+                        <div role="tabpanel" aria-hidden="false" class="ant-tabs-tabpane ant-tabs-tabpane-active">
+
+                            
+                            <div class="item" data-columntype="1">
+                                <div class="wf-widgetsitem"><label>单行输入框</label><i class="widgeticon iconfont textfield"></i></div>
+
+
+                                <div class="wf-component wf-component-textfield" data-title="单行输入框" data-tip="请输入" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">单行输入框</label><span class="wf-componentview-placeholder">请输入</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="wf-form wf-widgetsettings">
+                                    <div class="wf-field wf-setting-label">
+                                        <div class="fieldname">标题<span class="fieldinfo">最多20字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="单行输入框"></div>
+                                    </div>
+                                    <div class="wf-field wf-setting-placeholder">
+                                        <div class="fieldname">提示文字<span class="fieldinfo">最多50字</span></div>
+                                        <div class="fieldblock"><input type="text" class="" value="请输入">
+                                            <div class="fieldtips">内容最多可填写1000个字</div>
+                                        </div>
+                                    </div>
+                                    <div class="wf-field wf-setting-required">
+                                        <div class="fieldname">验证</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span class="verticalmiddle">（必填）</span></label></div>
+                                    <div class="wf-field wf-setting-print">
+                                        <div class="fieldname">打印</div>
+                                        <label class="fieldblock"><input type="checkbox" value="1"><span class="verticalmiddle">参与打印</span><span class="fieldinfo verticalmiddle">（如不勾选，打印时不显示该项）</span></label></div>
+                                </div>
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="2">
+                                <div class="wf-widgetsitem"><label>多行输入框</label><i class="widgeticon iconfont textareafield"></i></div>
+
+                                <div class="wf-component wf-component-textareafield" data-title="多行输入框" data-tip="请输入" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">多行输入框</label><span class="wf-componentview-placeholder">请输入</span></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="3">
+                                <div class="wf-widgetsitem"><label>数字输入框</label><i class="widgeticon iconfont numberfield"></i></div>
+
+                                <div class="wf-component wf-component-numberfield" data-title="数字输入框" data-tip="请输入" data-unit="" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">
+                                            数字输入框
+                                            </label><span class="wf-componentview-placeholder">请输入</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="4">
+                                <div class="wf-widgetsitem"><label>单选框</label><i class="widgeticon iconfont ddselectfield"></i></div>
+
+                                <div class="wf-component wf-component-ddselectfield" data-title="单选框" data-tip="请选择" data-items="选项1,选项2,选项3" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">单选框</label><span class="wf-componentview-placeholder">请选择</span><i class="icon icon-enter"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="5">
+                                <div class="wf-widgetsitem"><label>多选框</label><i class="widgeticon iconfont ddmultiselectfield"></i></div>
+
+                                <div class="wf-component wf-component-ddmultiselectfield" data-title="多选框" data-items="选项1,选项2,选项3" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">多选框</label><span class="wf-componentview-placeholder">请选择</span><i class="icon icon-enter"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="6">
+                                <div class="wf-widgetsitem"><label>日期</label><i class="widgeticon iconfont dddatefield"></i>
+                                </div>
+                                
+                                <div class="wf-component wf-component-dddatefield" data-title="日期" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">日期</label><span class="wf-componentview-placeholder">请选择</span><i class="icon icon-enter"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="7">
+                                <div class="wf-widgetsitem"><label>日期区间</label><i class="widgeticon iconfont dddaterangefield"></i></div>
+                                
+                                <div class="wf-component wf-component-dddaterangefield" data-title="开始时间" data-secondtitle="结束时间" data-tip="请选择" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">开始时间</label><span class="wf-componentview-placeholder">请选择</span><i class="icon icon-enter"></i>
+                                        </div>
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">结束时间</label><span class="wf-componentview-placeholder">请选择</span><i class="icon icon-enter"></i>
+                                        </div></div>
+                                </div>
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="8">
+                                <div class="wf-widgetsitem"><label>图片</label><i class="widgeticon iconfont ddphotofield"></i></div>
+                                <div class="wf-component wf-component-ddphotofield" data-title="图片" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">图片</label><span class="wf-componentview-placeholder"></span><i class="icon icon-camera"></i></div>
+                                    </div>
+                                </div>
+
+                                
+                                
+                                
+                                
+                                
+                                
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="9">
+
+                                <div class="wf-widgetsitem"><label>说明文字</label><i class="widgeticon iconfont textnote"></i>
+                                </div>
+                                <div class="wf-component wf-component-textnote" data-textnote="请输入说明文字" data-link="" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-content">
+                                            <div class="textnote-content"><p>请输入说明文字</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="10">
+                                <div class="wf-widgetsitem"><label>金额</label><i class="widgeticon iconfont moneyfield"></i>
+                                </div>
+                                <div class="wf-component wf-component-moneyfield" data-title="金额（元）" data-tip="请输入" data-req="2" data-log="2">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">金额（元）</label><span class="wf-componentview-placeholder">请输入</span></div>
+                                        <div class="cnformat">大写：壹万元整（示例）</div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="11">
+
+                                <div class="wf-widgetsitem"><label>附件</label><i class="widgeticon iconfont ddattachment"></i></div>
+                                <div class="wf-component wf-component-ddattachment" data-title="附件" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">附件</label><span class="wf-componentview-placeholder"></span><i class="icon icon-chakanfujian"></i></div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="item" data-columntype="12">
+                                <div class="wf-widgetsitem"><label>联系人</label><i class="widgeticon iconfont innercontactfield"></i></div>
+                                <div class="wf-component wf-component-innercontactfield" data-title="联系人" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">联系人</label><span class="wf-componentview-placeholder">请选择</span><i class="icon icon-enter"></i></div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="13">
+
+                                <div class="wf-widgetsitem"><label>部门</label><i class="widgeticon iconfont departmentfield"></i></div>
+                                <div class="wf-component wf-component-departmentfield" data-title="部门" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">部门</label><span class="wf-componentview-placeholder">请选择</span><i class="icon icon-enter"></i></div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="14">
+
+                                <div class="wf-widgetsitem"><label>地点</label><i class="widgeticon iconfont timeandlocationfield"></i></div>
+                                <div class="wf-component wf-component-timeandlocationfield" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">当前地点</label><span class="wf-componentview-placeholder">例如：杭州市北山路钉钉大厦</span></div>
+                                        <div><label class="wf-componentview-label">当前时间</label></div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+
+                            
+                            <div class="item" data-columntype="15">
+
+                                <div class="wf-widgetsitem"><label>电话</label><i class="widgeticon iconfont calculatefield"></i></div>
+
+                                <div class="wf-component wf-component-textfield" data-title="电话" data-tip="130XXXXXXXX" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">电话</label><span class="wf-componentview-placeholder">130XXXXXXXX</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="item" data-columntype="16">
+
+                                <div class="wf-widgetsitem"><label>数据组件</label><i class="widgeticon iconfont tablefield"></i>
+                                </div>
+                                <div class="wf-component wf-component-textfield" data-title="数据组件" data-tip="数据" data-req="2" data-log="1">
+                                    <div class="wf-remove icon icon-close"></div>
+                                    <div class="wf-overlay"></div>
+                                    <div class="wf-componentview">
+                                        <div class="wf-componentview-border"><label class="wf-componentview-label">数据组件</label><span class="wf-componentview-placeholder">数据</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="wf-formcanvas">
+                
+                <div class="wf-formcanvas-inner">
+                    
+                    <div class="wf-formcanvas-body dropbody empty">
+                        <div class="empty-bg-text">请从左侧拖动控件来创建属于您的表单</div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="wf-panel wf-settingpanel">
+                <div class="ant-tabs ant-tabs-top ant-tabs-line">
+                    
+                    <div role="tablist" class="ant-tabs-bar" tabindex="0">
+                        <div class="ant-tabs-nav-container ant-tabs-nav-container2">
+                            <span unselectable="unselectable" class="ant-tabs-tab-prev ant-tabs-tab-btn-disabled">
+                                <span class="ant-tabs-tab-prev-icon"></span>
+                            </span>
+                            <span unselectable="unselectable" class="ant-tabs-tab-next ant-tabs-tab-btn-disabled">
+                                <span class="ant-tabs-tab-next-icon"> </span>
+                            </span>
+                            <div class="ant-tabs-nav-wrap">
+                                <div class="ant-tabs-nav-scroll">
+                                    <div class="ant-tabs-nav ant-tabs-nav-animated">
+                                        <div class="ant-tabs-ink-bar ant-tabs-ink-bar2 ant-tabs-ink-bar-animated" style="transform: translate3d(175px, 0px, 0px); width: 175px; display: block;"></div>
+                                        <div role="tab" aria-disabled="false" aria-selected="false" data-i="1" class="ant-tabs-tab">控件设置
+                                        </div>
+                                        <div role="tab" aria-disabled="false" aria-selected="true" data-i="2" class="ant-tabs-tab-active ant-tabs-tab">表单设置
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ant-tabs-content ant-tabs-content2 ant-tabs-content-animated" style="margin-left: -100%;">
+                        
+                        <div role="tabpanel" id="wf-widgetsettings" aria-hidden="false" class="ant-tabs-tabpane ant-tabs-tabpane-active">
+                            
+                        </div>
+                        <div role="tabpanel" aria-hidden="true" class="ant-tabs-tabpane ant-tabs-tabpane-active">
+                            <div class="wf-form wf-formsettings">
+                                <div class="wf-field wf-setting-dir">
+                                    <div class="fieldname dir"><span style="display: inline-block; line-height: 34px; height: 34px; vertical-align: top;">分类</span>
+                                        <div class="select-main">
+                                            <div class="select default-select"><span id="xdj-fenlei" data-formtype="1">请选择</span>
+                                                 <i class="iconfont icon-new-down"></i></div>
+                                            <div class="select-options" id="xdj-select" style="display: none">
+                                                <div class="select select-option" data-formtype="1">询问笔录</div>
+                                                <div class="select select-option" data-formtype="2">现场检查</div>
+                                                <div class="select select-option" data-formtype="3">复查笔录</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="wf-field wf-setting-title">
+                                <div class="fieldname">名称
+                                    
+                                </div>
+                                <div class="fieldblock"><input type="text" class="" value="" id="xdj-formName"></div>
+                            </div>
+                            <div class="wf-field wf-setting-description">
+                                <div class="fieldname">描述
+                                    
+                                </div>
+                                <div class="fieldblock"><textarea type="text" class="" id="xdj-formType"></textarea></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="wf-storyboard" id="xdj-err" style="display: none;">
+    <div data-reactroot="" class="wf-popup wf-message visible" style="width: 360px;">
+        <i class="icon icon-close wf-popup-close" id="xdj-close-err"></i>
+        <div class="wf-popup-content error">
+            <i class="icon icon-error"></i>
+            <span class="text" id="xdj-err-text">错误</span>
+        </div>
+    </div>
+</div>
+
+
+    
+
+
+<div class="wf-storyboard mask" id="xdj-preview">
+    <div data-reactroot="" class="wf-popup wf-preview visible" style="width: 350px;"><i class="icon icon-close wf-popup-close" id="xdj-preview-close"></i>
+        <div class="wf-popup-content">
+            <div class="wf-qrcode"><h2>请扫描二维码预览</h2>
+                <div id="xdj-qrcode">
+                    
+
+                </div>
+           </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/index.js?7339f342343d220d0632"></script></body>
+</html>
