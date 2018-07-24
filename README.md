@@ -4,6 +4,8 @@
 
 预览地址：https://xiedajian.github.io/dingding/dist/index.html
 
+![效果](https://github.com/xiedajian/dingding/blob/master/src/assets/images/preview.gif)
+
 pc端自定义表单，手机端扫码预览
 
 用到jquery + jquery-ui + artTemplate + webpack 
